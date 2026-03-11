@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self';">
+  <title>Apply Now — MoneyMe</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo" aria-label="MoneyMe home">
+        <span class="navbar__logo-text">Money<span class="navbar__logo-accent">Me</span></span>
+      </a>
+      <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+      <ul class="navbar__menu" id="nav-menu" role="menubar">
+        <li class="navbar__item" role="none"><a href="index.html" class="navbar__link" role="menuitem">Home</a></li>
+        <li class="navbar__item" role="none"><a href="index.html#products" class="navbar__link" role="menuitem">Products</a></li>
+        <li class="navbar__item" role="none"><a href="apply.html" class="navbar__link navbar__link--active" role="menuitem">Apply Now</a></li>
+        <li class="navbar__item" role="none"><a href="index.html#contact" class="navbar__link" role="menuitem">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="form-page">
+      <div class="form-page__container">
+        <h1 class="form-page__title">Loan Application</h1>
+
+        <!-- Step Indicator -->
+        <div class="step-indicator" role="navigation" aria-label="Application progress">
+          <div class="step-indicator__step step-indicator__step--active" data-step="1" aria-current="step">
+            <span class="step-indicator__number">1</span>
+            <span class="step-indicator__label">Personal</span>
+          </div>
+          <div class="step-indicator__connector"></div>
+          <div class="step-indicator__step" data-step="2">
+            <span class="step-indicator__number">2</span>
+            <span class="step-indicator__label">Employment</span>
+          </div>
+          <div class="step-indicator__connector"></div>
+          <div class="step-indicator__step" data-step="3">
+            <span class="step-indicator__number">3</span>
+            <span class="step-indicator__label">Loan</span>
+          </div>
+          <div class="step-indicator__connector"></div>
+          <div class="step-indicator__step" data-step="4">
+            <span class="step-indicator__number">4</span>
+            <span class="step-indicator__label">Review</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Personal Details -->
+        <form class="form-step" id="step-1" novalidate>
+          <h2 class="form-step__heading">Personal Details</h2>
+
+          <div class="form-field">
+            <label for="firstName" class="form-field__label">First Name</label>
+            <input type="text" id="firstName" name="firstName" class="form-field__input"
+              maxlength="50" autocomplete="given-name" required
+              aria-required="true" aria-describedby="firstName-error"
+              placeholder="Enter your first name">
+            <span class="form-field__error" id="firstName-error" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="lastName" class="form-field__label">Last Name</label>
+            <input type="text" id="lastName" name="lastName" class="form-field__input"
+              maxlength="50" autocomplete="family-name" required
+              aria-required="true" aria-describedby="lastName-error"
+              placeholder="Enter your last name">
+            <span class="form-field__error" id="lastName-error" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="email" class="form-field__label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-field__input"
+              maxlength="100" autocomplete="email" required
+              aria-required="true" aria-describedby="email-error"
+              placeholder="you@example.com">
+            <span class="form-field__error" id="email-error" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="mobile" class="form-field__label">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" class="form-field__input"
+              maxlength="12" autocomplete="tel" required
+              aria-required="true" aria-describedby="mobile-error"
+              placeholder="04XX XXX XXX">
+            <span class="form-field__error" id="mobile-error" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="dob" class="form-field__label">Date of Birth</label>
+            <input type="text" id="dob" name="dob" class="form-field__input"
+              maxlength="10" required
+              aria-required="true" aria-describedby="dob-error"
+              placeholder="DD/MM/YYYY">
+            <span class="form-field__error" id="dob-error" role="alert"></span>
+          </div>
+
+          <div class="form-step__actions">
+            <button type="submit" id="step1-next" class="btn btn--primary form-step__btn" disabled>
+              Next Step
+            </button>
+          </div>
+        </form>
+
+        <!-- Step 2: Employment (placeholder — US-04) -->
+        <form class="form-step form-step--hidden" id="step-2" novalidate>
+          <h2 class="form-step__heading">Employment & Income</h2>
+          <p class="form-step__placeholder">Coming in US-04</p>
+        </form>
+
+        <!-- Step 3: Loan Details (placeholder — US-05) -->
+        <form class="form-step form-step--hidden" id="step-3" novalidate>
+          <h2 class="form-step__heading">Loan Details</h2>
+          <p class="form-step__placeholder">Coming in US-05</p>
+        </form>
+
+        <!-- Step 4: Review (placeholder — US-06) -->
+        <form class="form-step form-step--hidden" id="step-4" novalidate>
+          <h2 class="form-step__heading">Review & Submit</h2>
+          <p class="form-step__placeholder">Coming in US-06</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 MoneyMe. All rights reserved. This is a demo application.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/form-storage.js"></script>
+  <script src="js/form-validation.js"></script>
+</body>
+</html>
