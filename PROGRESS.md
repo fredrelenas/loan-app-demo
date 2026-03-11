@@ -12,3 +12,4 @@
 | #8 | US-08: E2E Playwright tests | Done | feat/us-08-e2e-tests | #17 | 9/9 PASS | 2026-03-11 |
 | #9 | US-09: Security audit | Done | feat/us-09-security-audit | #18 | Audit+E2E PASS | 2026-03-11 |
 | #19 | US-10: Brand styling update | Done | feat/us-10-brand-styling | #20 | Audit+E2E PASS | 2026-03-11 |
+| #21 | US-11: Brand logo | Done | feat/us-11-brand-logo | #22 | Audit+E2E PASS | 2026-03-11 |
