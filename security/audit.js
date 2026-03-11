@@ -127,19 +127,34 @@ function checkExternalLinks(file, content) {
  * @param {string} content - File content
  */
 function checkDangerousJS(file, content) {
+  // Strip comments before checking for dangerous patterns
+  const codeOnly = content
+    .replace(/\/\*[\s\S]*?\*\//g, '')  // block comments
+    .replace(/\/\/.*$/gm, '');          // line comments
+
   // Check for eval()
-  if (/\beval\s*\(/g.test(content)) {
+  if (/\beval\s*\(/g.test(codeOnly)) {
     fail(file, 'eval() usage detected');
   }
 
   // Check for innerHTML with variables (not static strings)
   const innerHTMLRegex = /\.innerHTML\s*=\s*(?!['"`])/g;
-  if (innerHTMLRegex.test(content)) {
+  if (innerHTMLRegex.test(codeOnly)) {
     fail(file, 'innerHTML assigned with dynamic value (potential XSS)');
   }
 
-  // Check for localStorage usage (should use sessionStorage)
-  if (/\blocalStorage\b/g.test(content)) {
+  // Check for document.write
+  if (/\bdocument\.write\s*\(/g.test(codeOnly)) {
+    fail(file, 'document.write() usage detected');
+  }
+
+  // Check for Function constructor
+  if (/\bnew\s+Function\s*\(/g.test(codeOnly)) {
+    fail(file, 'new Function() constructor detected');
+  }
+
+  // Check for localStorage usage in code (not comments)
+  if (/\blocalStorage\b/g.test(codeOnly)) {
     warn(file, 'localStorage usage detected — use sessionStorage for PII');
   }
 }
@@ -171,10 +186,22 @@ for (const file of JS_FILES) {
 
 // Results
 console.log('\n' + '='.repeat(50));
+console.log('\nChecks performed:');
+console.log('  [HTML] maxlength on text inputs and textareas');
+console.log('  [HTML] No inline event handlers (onclick, etc.)');
+console.log('  [HTML] Content-Security-Policy meta tag present');
+console.log('  [HTML] External links have rel="noopener noreferrer"');
+console.log('  [JS]   No eval() usage');
+console.log('  [JS]   No innerHTML with dynamic values');
+console.log('  [JS]   No document.write()');
+console.log('  [JS]   No new Function() constructor');
+console.log('  [JS]   No localStorage usage (sessionStorage only)');
+console.log('');
+
 if (failures > 0) {
-  console.error(`\nAUDIT FAILED: ${failures} failure(s), ${warnings} warning(s)`);
+  console.error(`AUDIT FAILED: ${failures} failure(s), ${warnings} warning(s)`);
   process.exit(1);
 } else {
-  console.log(`\nAUDIT PASSED: 0 failures, ${warnings} warning(s)`);
+  console.log(`AUDIT PASSED: 0 failures, ${warnings} warning(s)`);
   process.exit(0);
 }
