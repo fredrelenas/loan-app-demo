@@ -2,7 +2,7 @@
 
 | Issue | Title | Status | Branch | PR | Tests | Date |
 |-------|-------|--------|--------|----|-------|------|
-| #1 | US-01: Landing page | Backlog | — | — | — | — |
+| #1 | US-01: Landing page | Done | feat/us-01-landing-page | #10 | Audit PASS | 2026-03-11 |
 | #2 | US-02: Loan calculator | Backlog | — | — | — | — |
 | #3 | US-03: Personal details | Backlog | — | — | — | — |
 | #4 | US-04: Employment & income | Backlog | — | — | — | — |
