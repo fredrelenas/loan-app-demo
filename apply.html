@@ -244,14 +244,109 @@
           </div>
         </form>
 
-        <!-- Step 4: Review (placeholder — US-06) -->
+        <!-- Step 4: Review & Submit -->
         <form class="form-step form-step--hidden" id="step-4" novalidate>
           <h2 class="form-step__heading">Review & Submit</h2>
-          <p class="form-step__placeholder">Coming in US-06</p>
+
+          <div class="summary-section" id="summary-personal">
+            <div class="summary-section__header">
+              <h3 class="summary-section__title">Personal Details</h3>
+              <button type="button" class="summary-section__edit" data-edit-step="1" aria-label="Edit personal details">Edit</button>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Name</span>
+              <span class="summary-row__value" id="sum-name"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Email</span>
+              <span class="summary-row__value" id="sum-email"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Mobile</span>
+              <span class="summary-row__value" id="sum-mobile"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Date of Birth</span>
+              <span class="summary-row__value" id="sum-dob"></span>
+            </div>
+          </div>
+
+          <div class="summary-section" id="summary-employment">
+            <div class="summary-section__header">
+              <h3 class="summary-section__title">Employment & Income</h3>
+              <button type="button" class="summary-section__edit" data-edit-step="2" aria-label="Edit employment details">Edit</button>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Employment</span>
+              <span class="summary-row__value" id="sum-employment"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Employer</span>
+              <span class="summary-row__value" id="sum-employer"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Annual Income</span>
+              <span class="summary-row__value" id="sum-income"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Monthly Expenses</span>
+              <span class="summary-row__value" id="sum-expenses"></span>
+            </div>
+          </div>
+
+          <div class="summary-section" id="summary-loan">
+            <div class="summary-section__header">
+              <h3 class="summary-section__title">Loan Details</h3>
+              <button type="button" class="summary-section__edit" data-edit-step="3" aria-label="Edit loan details">Edit</button>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Loan Amount</span>
+              <span class="summary-row__value" id="sum-amount"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Loan Term</span>
+              <span class="summary-row__value" id="sum-term"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Purpose</span>
+              <span class="summary-row__value" id="sum-purpose"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Monthly Repayment</span>
+              <span class="summary-row__value" id="sum-repayment"></span>
+            </div>
+          </div>
+
+          <div class="form-field form-field--checkbox">
+            <input type="checkbox" id="termsConsent" required>
+            <label for="termsConsent" class="form-field__label">I agree to the Terms & Conditions</label>
+          </div>
+
+          <div class="form-field form-field--checkbox">
+            <input type="checkbox" id="privacyConsent" required>
+            <label for="privacyConsent" class="form-field__label">I consent to the Privacy Policy and collection of my personal information</label>
+          </div>
+
+          <div class="form-step__actions">
+            <button type="button" id="step4-back" class="btn form-step__btn form-step__btn--back">Back</button>
+            <button type="submit" id="step4-submit" class="btn btn--primary form-step__btn" disabled>Submit Application</button>
+          </div>
         </form>
       </div>
     </section>
   </main>
+
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal__icon" aria-hidden="true">&#9989;</div>
+      <h2 class="modal__title" id="modal-title">Application Submitted!</h2>
+      <p class="modal__text">Your loan application has been received. We'll be in touch shortly.</p>
+      <p class="modal__text">Your reference number:</p>
+      <div class="modal__ref" id="modal-ref"></div>
+      <a href="index.html" class="btn btn--primary">Back to Home</a>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -267,5 +362,6 @@
   <script src="js/form-validation.js"></script>
   <script src="js/form-step2.js"></script>
   <script src="js/form-step3.js"></script>
+  <script src="js/form-summary.js"></script>
 </body>
 </html>
