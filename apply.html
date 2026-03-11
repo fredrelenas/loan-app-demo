@@ -7,6 +7,7 @@
   <title>Apply Now — MoneyMe</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/calculator.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
@@ -167,10 +168,80 @@
           </div>
         </form>
 
-        <!-- Step 3: Loan Details (placeholder — US-05) -->
+        <!-- Step 3: Loan Details -->
         <form class="form-step form-step--hidden" id="step-3" novalidate>
           <h2 class="form-step__heading">Loan Details</h2>
-          <p class="form-step__placeholder">Coming in US-05</p>
+
+          <div class="form-field">
+            <label for="loanAmount" class="form-field__label">Loan Amount (AUD)</label>
+            <input type="text" id="loanAmount" name="loanAmount" class="form-field__input"
+              maxlength="10" required
+              aria-required="true" aria-describedby="loanAmount-error"
+              placeholder="e.g. 15000">
+            <span class="form-field__error" id="loanAmount-error" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Loan Term</label>
+            <div class="radio-group" role="radiogroup" aria-label="Loan term in months">
+              <div class="radio-group__option">
+                <input type="radio" id="term-12" name="loanTerm" value="12">
+                <label for="term-12" class="radio-group__label">12 months</label>
+              </div>
+              <div class="radio-group__option">
+                <input type="radio" id="term-24" name="loanTerm" value="24" checked>
+                <label for="term-24" class="radio-group__label">24 months</label>
+              </div>
+              <div class="radio-group__option">
+                <input type="radio" id="term-36" name="loanTerm" value="36">
+                <label for="term-36" class="radio-group__label">36 months</label>
+              </div>
+              <div class="radio-group__option">
+                <input type="radio" id="term-48" name="loanTerm" value="48">
+                <label for="term-48" class="radio-group__label">48 months</label>
+              </div>
+              <div class="radio-group__option">
+                <input type="radio" id="term-60" name="loanTerm" value="60">
+                <label for="term-60" class="radio-group__label">60 months</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="loanPurpose" class="form-field__label">Loan Purpose</label>
+            <select id="loanPurpose" name="loanPurpose" class="form-field__select"
+              required aria-required="true" aria-describedby="loanPurpose-error">
+              <option value="">Select loan purpose</option>
+              <option value="Car">Car</option>
+              <option value="Holiday">Holiday</option>
+              <option value="Renovation">Renovation</option>
+              <option value="Debt Consolidation">Debt Consolidation</option>
+              <option value="Medical">Medical</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="form-field__error" id="loanPurpose-error" role="alert"></span>
+          </div>
+
+          <div class="calculator__results" id="step3-estimate">
+            <div class="calculator__result-item">
+              <span class="calculator__result-label">Monthly Repayment</span>
+              <span class="calculator__result-value" id="step3-monthly">$0</span>
+            </div>
+            <div class="calculator__result-item">
+              <span class="calculator__result-label">Total Repayment</span>
+              <span class="calculator__result-value" id="step3-total">$0</span>
+            </div>
+            <div class="calculator__result-item">
+              <span class="calculator__result-label">Total Interest</span>
+              <span class="calculator__result-value" id="step3-interest">$0</span>
+            </div>
+          </div>
+          <p class="calculator__disclaimer">*Indicative rate of 8.99% p.a.</p>
+
+          <div class="form-step__actions">
+            <button type="button" id="step3-back" class="btn form-step__btn form-step__btn--back">Back</button>
+            <button type="submit" id="step3-next" class="btn btn--primary form-step__btn" disabled>Next Step</button>
+          </div>
         </form>
 
         <!-- Step 4: Review (placeholder — US-06) -->
@@ -195,5 +266,6 @@
   <script src="js/form-storage.js"></script>
   <script src="js/form-validation.js"></script>
   <script src="js/form-step2.js"></script>
+  <script src="js/form-step3.js"></script>
 </body>
 </html>
