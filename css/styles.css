@@ -5,24 +5,24 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  --color-primary: #6C2BD9;
-  --color-primary-dark: #5521B5;
-  --color-primary-light: #8B5CF6;
-  --color-secondary: #10B981;
-  --color-secondary-dark: #059669;
-  --color-accent: #F59E0B;
+  --color-primary: #0B2828;
+  --color-primary-dark: #072020;
+  --color-primary-light: #233E3E;
+  --color-secondary: #BBEE00;
+  --color-secondary-dark: #9ACC00;
+  --color-accent: #BBEE00;
   --color-text: #1F2937;
   --color-text-light: #6B7280;
   --color-text-inverse: #FFFFFF;
   --color-bg: #FFFFFF;
-  --color-bg-alt: #F9FAFB;
-  --color-bg-dark: #111827;
+  --color-bg-alt: #F9FEE6;
+  --color-bg-dark: #0B2828;
   --color-border: #E5E7EB;
   --color-error: #EF4444;
   --color-success: #10B981;
   --color-warning: #F59E0B;
 
-  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -132,13 +132,14 @@ img {
 }
 
 .btn--primary {
-  background: var(--color-primary);
-  color: var(--color-text-inverse);
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  font-weight: 700;
 }
 
 .btn--primary:hover {
-  background: var(--color-primary-dark);
-  color: var(--color-text-inverse);
+  background: var(--color-secondary-dark);
+  color: var(--color-primary);
 }
 
 .btn--secondary {
@@ -149,13 +150,13 @@ img {
 
 .btn--secondary:hover {
   background: var(--color-primary);
-  color: var(--color-text-inverse);
+  color: var(--color-secondary);
 }
 
 /* --- Navbar --- */
 .navbar {
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-primary);
+  border-bottom: none;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -173,15 +174,15 @@ img {
 .navbar__logo {
   font-size: var(--font-size-2xl);
   font-weight: 800;
-  color: var(--color-text);
+  color: var(--color-text-inverse);
 }
 
 .navbar__logo:hover {
-  color: var(--color-text);
+  color: var(--color-text-inverse);
 }
 
 .navbar__logo-accent {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .navbar__toggle {
@@ -202,7 +203,7 @@ img {
 .navbar__toggle-bar {
   width: 24px;
   height: 2px;
-  background: var(--color-text);
+  background: var(--color-text-inverse);
   transition: all var(--transition);
 }
 
@@ -225,8 +226,8 @@ img {
   top: 100%;
   left: 0;
   right: 0;
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-primary);
+  border-bottom: none;
   padding: var(--spacing-md);
 }
 
@@ -239,7 +240,7 @@ img {
 }
 
 .navbar__link {
-  color: var(--color-text);
+  color: var(--color-text-inverse);
   font-weight: 500;
   padding: var(--spacing-sm) var(--spacing-md);
   display: block;
@@ -248,12 +249,12 @@ img {
 }
 
 .navbar__link:hover {
-  color: var(--color-primary);
-  background: var(--color-bg-alt);
+  color: var(--color-secondary);
+  background: var(--color-primary-light);
 }
 
 .navbar__link--active {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .navbar__link:focus-visible {
@@ -292,14 +293,15 @@ img {
 .hero__cta {
   font-size: var(--font-size-lg);
   padding: var(--spacing-md) var(--spacing-2xl);
-  background: var(--color-text-inverse);
+  background: var(--color-secondary);
   color: var(--color-primary);
   border-radius: var(--radius-full);
+  font-weight: 700;
 }
 
 .hero__cta:hover {
-  background: var(--color-bg-alt);
-  color: var(--color-primary-dark);
+  background: var(--color-secondary-dark);
+  color: var(--color-primary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -338,7 +340,7 @@ img {
 .product-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-primary-light);
+  border-color: var(--color-secondary);
 }
 
 .product-card__icon {
@@ -424,7 +426,7 @@ img {
 }
 
 .footer__bottom {
-  border-top: 1px solid #374151;
+  border-top: 1px solid #233E3E;
   margin-top: var(--spacing-xl);
   padding-top: var(--spacing-lg);
   text-align: center;
