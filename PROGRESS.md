@@ -9,5 +9,5 @@
 | #5 | US-05: Loan details | Done | feat/us-05-loan-details | #14 | Audit PASS | 2026-03-11 |
 | #6 | US-06: Summary & submit | Done | feat/us-06-summary-submit | #15 | Audit PASS | 2026-03-11 |
 | #7 | US-07: Responsive & a11y | Done | feat/us-07-responsive-a11y | #16 | Audit PASS | 2026-03-11 |
-| #8 | US-08: E2E Playwright tests | Backlog | — | — | — | — |
+| #8 | US-08: E2E Playwright tests | Done | feat/us-08-e2e-tests | #17 | 9/9 PASS | 2026-03-11 |
 | #9 | US-09: Security audit | Backlog | — | — | — | — |
