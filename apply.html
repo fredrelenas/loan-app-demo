@@ -115,10 +115,56 @@
           </div>
         </form>
 
-        <!-- Step 2: Employment (placeholder — US-04) -->
+        <!-- Step 2: Employment & Income -->
         <form class="form-step form-step--hidden" id="step-2" novalidate>
           <h2 class="form-step__heading">Employment & Income</h2>
-          <p class="form-step__placeholder">Coming in US-04</p>
+
+          <div class="form-field">
+            <label for="employmentStatus" class="form-field__label">Employment Status</label>
+            <select id="employmentStatus" name="employmentStatus" class="form-field__select"
+              required aria-required="true" aria-describedby="employmentStatus-error">
+              <option value="">Select your employment status</option>
+              <option value="Full-time">Full-time</option>
+              <option value="Part-time">Part-time</option>
+              <option value="Casual">Casual</option>
+              <option value="Self-employed">Self-employed</option>
+              <option value="Unemployed">Unemployed</option>
+              <option value="Retired">Retired</option>
+            </select>
+            <span class="form-field__error" id="employmentStatus-error" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="employerName" class="form-field__label">Employer Name</label>
+            <input type="text" id="employerName" name="employerName" class="form-field__input"
+              maxlength="100" required
+              aria-required="true" aria-describedby="employerName-error"
+              placeholder="Enter your employer name">
+            <span class="form-field__error" id="employerName-error" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="annualIncome" class="form-field__label">Annual Income (AUD)</label>
+            <input type="text" id="annualIncome" name="annualIncome" class="form-field__input"
+              maxlength="10" required
+              aria-required="true" aria-describedby="annualIncome-error"
+              placeholder="e.g. 75000">
+            <span class="form-field__error" id="annualIncome-error" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="monthlyExpenses" class="form-field__label">Monthly Expenses (AUD)</label>
+            <input type="text" id="monthlyExpenses" name="monthlyExpenses" class="form-field__input"
+              maxlength="10" required
+              aria-required="true" aria-describedby="monthlyExpenses-error"
+              placeholder="e.g. 2500">
+            <span class="form-field__error" id="monthlyExpenses-error" role="alert"></span>
+          </div>
+
+          <div class="form-step__actions">
+            <button type="button" id="step2-back" class="btn form-step__btn form-step__btn--back">Back</button>
+            <button type="submit" id="step2-next" class="btn btn--primary form-step__btn" disabled>Next Step</button>
+          </div>
         </form>
 
         <!-- Step 3: Loan Details (placeholder — US-05) -->
@@ -148,5 +194,6 @@
   <script src="js/main.js"></script>
   <script src="js/form-storage.js"></script>
   <script src="js/form-validation.js"></script>
+  <script src="js/form-step2.js"></script>
 </body>
 </html>
