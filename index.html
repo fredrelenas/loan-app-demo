@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self';">
+  <title>MoneyMe — Personal Loans, Car Loans & Credit Cards</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo" aria-label="MoneyMe home">
+        <span class="navbar__logo-text">Money<span class="navbar__logo-accent">Me</span></span>
+      </a>
+      <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+      <ul class="navbar__menu" id="nav-menu" role="menubar">
+        <li class="navbar__item" role="none"><a href="index.html" class="navbar__link navbar__link--active" role="menuitem">Home</a></li>
+        <li class="navbar__item" role="none"><a href="#products" class="navbar__link" role="menuitem">Products</a></li>
+        <li class="navbar__item" role="none"><a href="apply.html" class="navbar__link" role="menuitem">Apply Now</a></li>
+        <li class="navbar__item" role="none"><a href="#contact" class="navbar__link" role="menuitem">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero__container">
+        <h1 class="hero__title">Fast, Fair Finance for Every Australian</h1>
+        <p class="hero__subtitle">Personal loans from $2,000 to $50,000. Apply in minutes, get funded today. No hidden fees, no surprises.</p>
+        <a href="apply.html" class="hero__cta btn btn--primary">Get Started</a>
+      </div>
+    </section>
+
+    <!-- Loan Calculator Section -->
+    <section class="calculator-section" id="calculator">
+      <div class="calculator-section__container">
+        <h2 class="calculator-section__title">Estimate Your Repayments</h2>
+        <div class="calculator" id="loan-calculator">
+          <div class="calculator__inputs">
+            <div class="calculator__field">
+              <label for="calc-amount" class="calculator__label">Loan Amount: <span id="calc-amount-display">$10,000</span></label>
+              <input type="range" id="calc-amount" class="calculator__slider" min="2000" max="50000" step="500" value="10000" aria-label="Loan amount slider">
+              <div class="calculator__range-labels">
+                <span>$2,000</span>
+                <span>$50,000</span>
+              </div>
+            </div>
+            <div class="calculator__field">
+              <label for="calc-term" class="calculator__label">Loan Term</label>
+              <select id="calc-term" class="calculator__select" aria-label="Loan term selector">
+                <option value="12">12 months</option>
+                <option value="24" selected>24 months</option>
+                <option value="36">36 months</option>
+                <option value="48">48 months</option>
+                <option value="60">60 months</option>
+              </select>
+            </div>
+          </div>
+          <div class="calculator__results">
+            <div class="calculator__result-item">
+              <span class="calculator__result-label">Monthly Repayment</span>
+              <span class="calculator__result-value" id="calc-monthly">$0</span>
+            </div>
+            <div class="calculator__result-item">
+              <span class="calculator__result-label">Total Repayment</span>
+              <span class="calculator__result-value" id="calc-total">$0</span>
+            </div>
+            <div class="calculator__result-item">
+              <span class="calculator__result-label">Total Interest</span>
+              <span class="calculator__result-value" id="calc-interest">$0</span>
+            </div>
+          </div>
+          <a href="apply.html" class="calculator__apply btn btn--primary" id="calc-apply-btn">Apply for This Loan</a>
+          <p class="calculator__disclaimer">*Indicative rate of 8.99% p.a. Actual rate may vary based on your credit profile.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+      <div class="products__container">
+        <h2 class="products__title">Our Products</h2>
+        <div class="products__grid">
+          <article class="product-card">
+            <div class="product-card__icon" aria-hidden="true">&#128176;</div>
+            <h3 class="product-card__title">Personal Loans</h3>
+            <p class="product-card__desc">Borrow $2,000 to $50,000 for anything you need. Fixed rates, flexible terms from 12 to 60 months.</p>
+            <a href="apply.html" class="product-card__link">Learn More</a>
+          </article>
+          <article class="product-card">
+            <div class="product-card__icon" aria-hidden="true">&#128663;</div>
+            <h3 class="product-card__title">Car Loans</h3>
+            <p class="product-card__desc">Drive away sooner with competitive car finance. New or used vehicles, fast approval.</p>
+            <a href="apply.html" class="product-card__link">Learn More</a>
+          </article>
+          <article class="product-card">
+            <div class="product-card__icon" aria-hidden="true">&#128179;</div>
+            <h3 class="product-card__title">MACC</h3>
+            <p class="product-card__desc">MoneyMe Assured Credit Control. A flexible line of credit up to $20,000 on your terms.</p>
+            <a href="apply.html" class="product-card__link">Learn More</a>
+          </article>
+          <article class="product-card">
+            <div class="product-card__icon" aria-hidden="true">&#128179;</div>
+            <h3 class="product-card__title">Credit Cards</h3>
+            <p class="product-card__desc">No annual fee credit cards with rewards. Manage your spending with the MoneyMe app.</p>
+            <a href="apply.html" class="product-card__link">Learn More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer__container">
+      <div class="footer__grid">
+        <div class="footer__section">
+          <h4 class="footer__heading">MoneyMe</h4>
+          <p class="footer__text">ABN 40 163 691 236<br>Australian Credit Licence 442218</p>
+        </div>
+        <div class="footer__section">
+          <h4 class="footer__heading">Products</h4>
+          <ul class="footer__links">
+            <li><a href="apply.html" class="footer__link">Personal Loans</a></li>
+            <li><a href="apply.html" class="footer__link">Car Loans</a></li>
+            <li><a href="apply.html" class="footer__link">MACC</a></li>
+            <li><a href="apply.html" class="footer__link">Credit Cards</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Privacy Policy</a></li>
+            <li><a href="#" class="footer__link">Terms & Conditions</a></li>
+            <li><a href="#" class="footer__link">Credit Guide</a></li>
+            <li><a href="#" class="footer__link">Target Market Determination</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4 class="footer__heading">Contact</h4>
+          <p class="footer__text">
+            Phone: 1300 000 000<br>
+            Email: support@moneyme.com.au<br>
+            Level 3, 131 Macquarie Street<br>
+            Sydney NSW 2000
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 MoneyMe. All rights reserved. This is a demo application.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/calculator.js"></script>
+</body>
+</html>
