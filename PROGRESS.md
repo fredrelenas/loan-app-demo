@@ -4,7 +4,7 @@
 |-------|-------|--------|--------|----|-------|------|
 | #1 | US-01: Landing page | Done | feat/us-01-landing-page | #10 | Audit PASS | 2026-03-11 |
 | #2 | US-02: Loan calculator | Done | feat/us-02-loan-calculator | #11 | Audit PASS | 2026-03-11 |
-| #3 | US-03: Personal details | Backlog | — | — | — | — |
+| #3 | US-03: Personal details | Done | feat/us-03-personal-details | #12 | Audit PASS | 2026-03-11 |
 | #4 | US-04: Employment & income | Backlog | — | — | — | — |
 | #5 | US-05: Loan details | Backlog | — | — | — | — |
 | #6 | US-06: Summary & submit | Backlog | — | — | — | — |
