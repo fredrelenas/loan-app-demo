@@ -172,17 +172,18 @@ img {
 }
 
 .navbar__logo {
-  font-size: var(--font-size-2xl);
-  font-weight: 800;
-  color: var(--color-text-inverse);
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .navbar__logo:hover {
-  color: var(--color-text-inverse);
-}
-
-.navbar__logo-accent {
-  color: var(--color-secondary);
+  opacity: 0.9;
 }
 
 .navbar__toggle {
