@@ -1,0 +1,28 @@
+{
+  "name": "loan-app-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "npx playwright test",
+    "audit": "node security/audit.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredrelenas/loan-app-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fredrelenas/loan-app-demo/issues"
+  },
+  "homepage": "https://github.com/fredrelenas/loan-app-demo#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}
